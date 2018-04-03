@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  cliclou:boolean = false;
+  compras:object[] = [
+    {titulo:"Livro de Angular"},
+    {titulo:"Livro de TypeScript"}
+  ];
 }

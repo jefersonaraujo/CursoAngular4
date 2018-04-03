@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TituloComponent } from './titulo/titulo.component';
+import { DestaqueDirective } from './destaque.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TituloComponent
+    TituloComponent,
+    DestaqueDirective
   ],
   imports: [
     BrowserModule
