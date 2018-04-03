@@ -1,0 +1,415 @@
+using classpath: /usr/share/spark/lib/jdom.jar:/usr/share/spark/lib/log4j.jar:/usr/share/spark/lib/lti-civil.jar:/usr/share/spark/lib/fmj.jar:/usr/share/spark/lib/jspeex.jar:/usr/share/spark/lib/libjitsi.jar:/usr/share/spark/lib/zrtp4j-light.jar:/usr/share/spark/lib/jna.jar:/usr/share/spark/lib/bcpkix.jar:/usr/share/spark/lib/bcprov.jar:/usr/share/spark/lib/bccontrib.jar:/usr/share/spark/lib/ice4j.jar:/usr/share/spark/lib/osgi.core.jar:/usr/share/spark/lib/startup.jar:/usr/share/spark/lib/linux/jdic.jar:/usr/share/spark/resources
+abr 03, 2018 3:33:13 PM org.jivesoftware.smack.util.DNSUtil resolveDomain
+ADVERTÊNCIA: Exception while resovling SRV records for spark.fortalnet.com.br. Consider adding '_xmpp-(server|client)._tcp' DNS SRV Records
+javax.naming.NameNotFoundException: DNS name not found [response code 3]; remaining name '_xmpp-client._tcp.spark.fortalnet.com.br'
+	at com.sun.jndi.dns.DnsClient.checkResponseCode(DnsClient.java:660)
+	at com.sun.jndi.dns.DnsClient.isMatchResponse(DnsClient.java:578)
+	at com.sun.jndi.dns.DnsClient.doUdpQuery(DnsClient.java:426)
+	at com.sun.jndi.dns.DnsClient.query(DnsClient.java:211)
+	at com.sun.jndi.dns.Resolver.query(Resolver.java:81)
+	at com.sun.jndi.dns.DnsContext.c_getAttributes(DnsContext.java:434)
+	at com.sun.jndi.toolkit.ctx.ComponentDirContext.p_getAttributes(ComponentDirContext.java:235)
+	at com.sun.jndi.toolkit.ctx.PartialCompositeDirContext.getAttributes(PartialCompositeDirContext.java:141)
+	at com.sun.jndi.toolkit.ctx.PartialCompositeDirContext.getAttributes(PartialCompositeDirContext.java:129)
+	at javax.naming.directory.InitialDirContext.getAttributes(InitialDirContext.java:142)
+	at org.jivesoftware.smack.util.dns.javax.JavaxResolver.lookupSRVRecords(JavaxResolver.java:78)
+	at org.jivesoftware.smack.util.DNSUtil.resolveDomain(DNSUtil.java:171)
+	at org.jivesoftware.smack.util.DNSUtil.resolveXMPPDomain(DNSUtil.java:120)
+	at org.jivesoftware.smack.AbstractXMPPConnection.populateHostAddresses(AbstractXMPPConnection.java:574)
+	at org.jivesoftware.smack.tcp.XMPPTCPConnection.connectUsingConfiguration(XMPPTCPConnection.java:564)
+	at org.jivesoftware.smack.tcp.XMPPTCPConnection.connectInternal(XMPPTCPConnection.java:850)
+	at org.jivesoftware.smack.AbstractXMPPConnection.connect(AbstractXMPPConnection.java:364)
+	at org.jivesoftware.LoginDialog$LoginPanel.login(LoginDialog.java:1107)
+	at org.jivesoftware.LoginDialog$LoginPanel.access$900(LoginDialog.java:335)
+	at org.jivesoftware.LoginDialog$LoginPanel$3.construct(LoginDialog.java:894)
+	at org.jivesoftware.spark.util.SwingWorker.lambda$new$1(SwingWorker.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Failed to initialize LibJitsi backend org.jitsi.impl.libjitsi.LibJitsiOSGiImpl. (Exception stack trace follows.) Will try an alternative.
+java.lang.IllegalStateException: FrameworkUtil.getBundle
+	at org.jitsi.impl.libjitsi.LibJitsiOSGiImpl.<init>(LibJitsiOSGiImpl.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.jitsi.service.libjitsi.LibJitsi.start(LibJitsi.java:247)
+	at org.jitsi.service.libjitsi.LibJitsi.start(LibJitsi.java:180)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.scanDevices(MediaPreferencePanel.java:133)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.<init>(MediaPreferencePanel.java:98)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreference.<init>(MediaPreference.java:29)
+	at org.jivesoftware.spark.preference.PreferenceManager.<init>(PreferenceManager.java:51)
+	at org.jivesoftware.spark.SparkManager.getPreferenceManager(SparkManager.java:162)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.<init>(SparkTransferManager.java:204)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.getInstance(SparkTransferManager.java:128)
+	at org.jivesoftware.spark.Workspace.buildLayout(Workspace.java:212)
+	at org.jivesoftware.LoginDialog.lambda$startSpark$1(LoginDialog.java:1326)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Successfully started LibJitsi using as implementation: org.jitsi.impl.libjitsi.LibJitsiImpl
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.runtime.name=Java(TM) SE Runtime Environment
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.boot.library.path=/usr/lib/jvm/java-8-oracle/jre/lib/amd64
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.version=25.161-b12
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.vendor=Oracle Corporation
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vendor.url=http://java.oracle.com/
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: path.separator=:
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: file.encoding.pkg=sun.io
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: user.country=BR
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.java.launcher=SUN_STANDARD
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.os.patch.level=unknown
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.specification.name=Java Virtual Machine Specification
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: user.dir=/usr/share/spark
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.runtime.version=1.8.0_161-b12
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.endorsed.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: os.arch=amd64
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.io.tmpdir=/tmp
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: line.separator=
+
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.sf.fmj.utility.JmfRegistry.disableLoad=true
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.specification.vendor=Oracle Corporation
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: os.name=Linux
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.sf.fmj.utility.JmfRegistry.filename=/home/jeferson/./.fmj.registry
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: apple.laf.useScreenMenuBar=true
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: appdir=/usr/share/spark
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.java2d.noddraw=true
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.jnu.encoding=UTF-8
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.library.path=/usr/share/spark/lib/linux64;/usr/share/spark/resources;/usr/share/spark/lib/jdom.jar:/usr/share/spark/lib/log4j.jar:/usr/share/spark/lib/lti-civil.jar:/usr/share/spark/lib/fmj.jar:/usr/share/spark/lib/jspeex.jar:/usr/share/spark/lib/libjitsi.jar:/usr/share/spark/lib/zrtp4j-light.jar:/usr/share/spark/lib/jna.jar:/usr/share/spark/lib/bcpkix.jar:/usr/share/spark/lib/bcprov.jar:/usr/share/spark/lib/bccontrib.jar:/usr/share/spark/lib/ice4j.jar:/usr/share/spark/lib/osgi.core.jar:/usr/share/spark/lib/startup.jar:/usr/share/spark/lib/linux/jdic.jar:/usr/share/spark/resources;/usr/share/spark/resources
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.java.sip.communicator.SC_CACHE_DIR_LOCATION=/home/jeferson
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.awt.enableExtraMouseButtons=true
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.specification.name=Java Platform API Specification
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.class.version=52.0
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: org.jitsi.service.audionotifier.AudioNotifierService=org.jitsi.impl.neomedia.notify.AudioNotifierServiceImpl
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: os.version=4.4.0-116-generic
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: user.home=/home/jeferson
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: user.timezone=America/Fortaleza
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.awt.printerjob=sun.print.PSPrinterJob
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: file.encoding=UTF-8
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.specification.version=1.8
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.class.path=/usr/share/spark/lib/jdom.jar:/usr/share/spark/lib/log4j.jar:/usr/share/spark/lib/lti-civil.jar:/usr/share/spark/lib/fmj.jar:/usr/share/spark/lib/jspeex.jar:/usr/share/spark/lib/libjitsi.jar:/usr/share/spark/lib/zrtp4j-light.jar:/usr/share/spark/lib/jna.jar:/usr/share/spark/lib/bcpkix.jar:/usr/share/spark/lib/bcprov.jar:/usr/share/spark/lib/bccontrib.jar:/usr/share/spark/lib/ice4j.jar:/usr/share/spark/lib/osgi.core.jar:/usr/share/spark/lib/startup.jar:/usr/share/spark/lib/linux/jdic.jar:/usr/share/spark/resources
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: user.name=jeferson
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.specification.version=1.8
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.java.command=org.jivesoftware.launcher.Startup
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.home=/usr/lib/jvm/java-8-oracle/jre
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.arch.data.model=64
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: user.language=pt
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.specification.vendor=Oracle Corporation
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.sf.fmj.utility.JmfRegistry.disableCommit=true
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: awt.toolkit=sun.awt.X11.XToolkit
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vm.info=mixed mode
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.version=1.8.0_161
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.ext.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.awt.erasebackgroundonresize=false
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.boot.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.java.sip.communicator.SC_HOME_DIR_LOCATION=/home/jeferson
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vendor=Oracle Corporation
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.security.auth.login.config=gss.conf
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: file.separator=/
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.java.sip.communicator.SC_HOME_DIR_NAME=.
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.font.fontmanager=sun.awt.X11FontManager
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.io.unicode.encoding=UnicodeLittle
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.cpu.endian=little
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.awt.noerasebackground=true
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: net.java.sip.communicator.SC_LOG_DIR_LOCATION=/home/jeferson
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: javax.security.auth.useSubjectCredsOnly=false
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.desktop=gnome
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: sun.cpu.isalist=
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Normal classloader
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: failed to find jitsi-defaults.properties with class loader, will continue without it.
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Normal classloader
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: failed to find jitsi-default-overrides.properties with class loader, will continue without it.
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger warn
+ADVERTÊNCIA: Codec org.jitsi.impl.neomedia.codec.audio.mp3.JNIEncoder is NOT successfully registered
+java.lang.UnsatisfiedLinkError: no jnffmpeg in java.library.path
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1867)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at org.jitsi.util.JNIUtils.loadLibrary(JNIUtils.java:41)
+	at org.jitsi.impl.neomedia.codec.FFmpeg.<clinit>(FFmpeg.java:228)
+	at org.jitsi.impl.neomedia.codec.audio.FFmpegAudioEncoder.assertFindAVCodec(FFmpegAudioEncoder.java:49)
+	at org.jitsi.impl.neomedia.codec.audio.mp3.JNIEncoder.<clinit>(JNIEncoder.java:64)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.jitsi.impl.neomedia.codec.FMJPlugInConfiguration.registerCustomCodecs(FMJPlugInConfiguration.java:234)
+	at org.jitsi.impl.neomedia.MediaServiceImpl.setupFMJ(MediaServiceImpl.java:1618)
+	at org.jitsi.impl.neomedia.MediaServiceImpl.<clinit>(MediaServiceImpl.java:250)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl$ServiceLock.initializeService(LibJitsiImpl.java:173)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl$ServiceLock.getService(LibJitsiImpl.java:131)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl.getService(LibJitsiImpl.java:91)
+	at org.jitsi.service.libjitsi.LibJitsi.invokeGetServiceOnImpl(LibJitsi.java:172)
+	at org.jitsi.service.libjitsi.LibJitsi.getMediaService(LibJitsi.java:124)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.scanDevices(MediaPreferencePanel.java:136)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.<init>(MediaPreferencePanel.java:98)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreference.<init>(MediaPreference.java:29)
+	at org.jivesoftware.spark.preference.PreferenceManager.<init>(PreferenceManager.java:51)
+	at org.jivesoftware.spark.SparkManager.getPreferenceManager(SparkManager.java:162)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.<init>(SparkTransferManager.java:204)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.getInstance(SparkTransferManager.java:128)
+	at org.jivesoftware.spark.Workspace.buildLayout(Workspace.java:212)
+	at org.jivesoftware.LoginDialog.lambda$startSpark$1(LoginDialog.java:1326)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger warn
+ADVERTÊNCIA: Codec org.jitsi.impl.neomedia.codec.audio.amrwb.JNIDecoder is NOT successfully registered
+java.lang.NoClassDefFoundError: Could not initialize class org.jitsi.impl.neomedia.codec.FFmpeg
+	at org.jitsi.impl.neomedia.codec.audio.FFmpegAudioDecoder.assertFindAVCodec(FFmpegAudioDecoder.java:42)
+	at org.jitsi.impl.neomedia.codec.audio.amrwb.JNIDecoder.<clinit>(JNIDecoder.java:34)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.jitsi.impl.neomedia.codec.FMJPlugInConfiguration.registerCustomCodecs(FMJPlugInConfiguration.java:234)
+	at org.jitsi.impl.neomedia.MediaServiceImpl.setupFMJ(MediaServiceImpl.java:1618)
+	at org.jitsi.impl.neomedia.MediaServiceImpl.<clinit>(MediaServiceImpl.java:250)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl$ServiceLock.initializeService(LibJitsiImpl.java:173)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl$ServiceLock.getService(LibJitsiImpl.java:131)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl.getService(LibJitsiImpl.java:91)
+	at org.jitsi.service.libjitsi.LibJitsi.invokeGetServiceOnImpl(LibJitsi.java:172)
+	at org.jitsi.service.libjitsi.LibJitsi.getMediaService(LibJitsi.java:124)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.scanDevices(MediaPreferencePanel.java:136)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.<init>(MediaPreferencePanel.java:98)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreference.<init>(MediaPreference.java:29)
+	at org.jivesoftware.spark.preference.PreferenceManager.<init>(PreferenceManager.java:51)
+	at org.jivesoftware.spark.SparkManager.getPreferenceManager(SparkManager.java:162)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.<init>(SparkTransferManager.java:204)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.getInstance(SparkTransferManager.java:128)
+	at org.jivesoftware.spark.Workspace.buildLayout(Workspace.java:212)
+	at org.jivesoftware.LoginDialog.lambda$startSpark$1(LoginDialog.java:1326)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger warn
+ADVERTÊNCIA: Codec org.jitsi.impl.neomedia.codec.audio.amrwb.JNIEncoder is NOT successfully registered
+java.lang.NoClassDefFoundError: Could not initialize class org.jitsi.impl.neomedia.codec.FFmpeg
+	at org.jitsi.impl.neomedia.codec.audio.FFmpegAudioEncoder.assertFindAVCodec(FFmpegAudioEncoder.java:49)
+	at org.jitsi.impl.neomedia.codec.audio.amrwb.JNIEncoder.<clinit>(JNIEncoder.java:35)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.jitsi.impl.neomedia.codec.FMJPlugInConfiguration.registerCustomCodecs(FMJPlugInConfiguration.java:234)
+	at org.jitsi.impl.neomedia.MediaServiceImpl.setupFMJ(MediaServiceImpl.java:1618)
+	at org.jitsi.impl.neomedia.MediaServiceImpl.<clinit>(MediaServiceImpl.java:250)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl$ServiceLock.initializeService(LibJitsiImpl.java:173)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl$ServiceLock.getService(LibJitsiImpl.java:131)
+	at org.jitsi.impl.libjitsi.LibJitsiImpl.getService(LibJitsiImpl.java:91)
+	at org.jitsi.service.libjitsi.LibJitsi.invokeGetServiceOnImpl(LibJitsi.java:172)
+	at org.jitsi.service.libjitsi.LibJitsi.getMediaService(LibJitsi.java:124)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.scanDevices(MediaPreferencePanel.java:136)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreferencePanel.<init>(MediaPreferencePanel.java:98)
+	at org.jivesoftware.sparkimpl.preference.media.MediaPreference.<init>(MediaPreference.java:29)
+	at org.jivesoftware.spark.preference.PreferenceManager.<init>(PreferenceManager.java:51)
+	at org.jivesoftware.spark.SparkManager.getPreferenceManager(SparkManager.java:162)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.<init>(SparkTransferManager.java:204)
+	at org.jivesoftware.spark.filetransfer.SparkTransferManager.getInstance(SparkTransferManager.java:128)
+	at org.jivesoftware.spark.Workspace.buildLayout(Workspace.java:212)
+	at org.jivesoftware.LoginDialog.lambda$startSpark$1(LoginDialog.java:1326)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Initializing audio devices
+ALSA lib pcm.c:2239:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2239:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2239:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+bt_audio_service_open: connect() failed: Conexão recusada (111)
+bt_audio_service_open: connect() failed: Conexão recusada (111)
+bt_audio_service_open: connect() failed: Conexão recusada (111)
+bt_audio_service_open: connect() failed: Conexão recusada (111)
+ALSA lib pcm_dmix.c:961:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Initializing video devices
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Looking for configured audio devices.
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Scanning for configured Video Devices.
+abr 03, 2018 3:33:15 PM org.jitsi.util.Logger info
+INFORMAÇÕES: Found Desktop Streaming 0 as a AVFRAME, class org.jitsi.impl.neomedia.codec.video.AVFrame video capture device.
+================================
+MediaType: audio
+org.jitsi.impl.neomedia.MediaServiceImpl@78c90367
+sendrecv
+Device: Default : pulseaudio:
+LINEAR, 44100.0 Hz, 16-bit, Mono, LittleEndian, Signed
+
+================================
+================================
+MediaType: video
+org.jitsi.impl.neomedia.MediaServiceImpl@78c90367
+recvonly
+Device: org.jitsi.impl.neomedia.device.MediaDeviceImpl@660d1ef9
+================================
+================================
+MediaType: data
+org.jitsi.impl.neomedia.MediaServiceImpl@78c90367
+Device: null
+================================
+PulseAudio
+PortAudio
+audiosilence
+None
+AudioSystem:PulseAudio
+javasound://
+javasound://
+javasound://
+javasound://
+javasound://
+javasound://
+javasound://
+javasound://
+abr 03, 2018 3:33:18 PM org.jitsi.util.Logger info
+INFORMAÇÕES: GatherEntropy got: 176400 bytes
+abr 03, 2018 3:33:18 PM org.jivesoftware.spark.util.log.Log error
+GRAVE: Dictionary not found
+abr 03, 2018 3:33:19 PM org.jivesoftware.spark.util.log.Log error
+GRAVE: jar:file:/usr/share/spark/lib/spark.jar!/images/spark-24x24.png
+Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: invalid sequence element
+	at javax.swing.SpinnerListModel.setValue(SpinnerListModel.java:185)
+	at javax.swing.JSpinner.setValue(JSpinner.java:354)
+	at org.jivesoftware.sparkimpl.preference.notifications.NotificationsUI.setNotificationsDisplayTime(NotificationsUI.java:159)
+	at org.jivesoftware.sparkimpl.preference.notifications.NotificationsPreference$1.finished(NotificationsPreference.java:88)
+	at org.jivesoftware.spark.util.SwingWorker.lambda$null$0(SwingWorker.java:146)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
