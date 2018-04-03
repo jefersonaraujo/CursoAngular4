@@ -2,9 +2,6 @@
 
 Esse modelo foi desenvolvido como exemplo de uma aplicação inicial com Angular 4 + Bootstrap 4
 
-## Autor
-
-O autor desse modelo é o Guilherme Ferreira do Guia Código
 
 ## Instalação
 
