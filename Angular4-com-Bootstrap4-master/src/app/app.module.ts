@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //Firebase
-// import { AngularFireModule } from 'angularfire2';
-// import { AngularFireAuthModule } from 'angularfire2/auth';
-// import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 
@@ -24,7 +24,11 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+     AngularFireAuthModule,
+
 
   ],
   providers: [],
