@@ -9,13 +9,13 @@
   <div class="row justify-content-center">
     <h1>Sistema de login com Firebase</h1>
   </div>
-  <div class="row justify-content-center">
+  <div *ngIf="(user | async)?.displayName" class="row justify-content-center">
     <div class="media">
       <img class="d-flex mr-3" width="60" src="{{ (user | async)?.photoURL }}"  alt="Generic placeholder image">
       <div class="media-body">
         <h5 class="mt-0">{{ (user | async)?.displayName }}</h5>
         <p class="mt-0">{{ (user | async)?.email }}</p>
-        <button class="btn btn-info">Sair</button>
+        <button (click)="sair()" class="btn btn-info">Sair</button>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
     <button (click)="loginFacebook()" class="btn btn-block btn-outline-primary">Login com Facebook</button>
   </div>
   <div class="row justify-content-center">
-    <button class="btn btn-block btn-outline-warning">Login com Github</button>
+    <button (click)="loginGithub()" class="btn btn-block btn-outline-warning">Login com Github</button>
   </div>
   <div class="row justify-content-center">
     <button (click)="abreEmailLogin = !abreEmailLogin" class="btn btn-block btn-outline-danger">Login com E-mail</button>

@@ -14,10 +14,18 @@ export class AppComponent {
   user: Observable<firebase.User>;
   constructor(public afAuth: AngularFireAuth){
   this.user= this.afAuth.authState;
-  
+
 }
 
 loginFacebook(){
   this.afAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider());
+}
+
+loginGithub(){
+  this.afAuth.auth.signInWithPopup( new firebase.auth.GithubAuthProvider());
+}
+sair(){
+  this.afAuth.auth.signOut();
+
 }
 }
