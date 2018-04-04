@@ -24,10 +24,10 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
-    // AngularFireModule.initializeApp(firebaseConfig),
-    // AngularFireDatabaseModule,
-    // AngularFireAuthModule
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
