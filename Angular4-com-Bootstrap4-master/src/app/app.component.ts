@@ -14,6 +14,7 @@ export class AppComponent {
   user: Observable<firebase.User>;
   constructor(public afAuth: AngularFireAuth){
   this.user= this.afAuth.authState;
+  
 }
 
 loginFacebook(){
