@@ -9,7 +9,7 @@
   <div class="row justify-content-center">
     <h1>Sistema de login com Firebase</h1>
   </div>
-  <div *ngIf="(user | async)?.displayName" class="row justify-content-center">
+  <div *ngIf="(user | async)?.email" class="row justify-content-center">
     <div class="media">
       <img class="d-flex mr-3" width="60" src="{{ (user | async)?.photoURL }}"  alt="Generic placeholder image">
       <div class="media-body">
@@ -32,12 +32,12 @@
   <br>
   <div *ngIf="abreEmailLogin" class="row justify-content-center">
     <div class="form-group">
-      <input type="email" class="form-control" placeholder="E-mail">
+      <input type="email" class="form-control" [(ngModel)]="email" placeholder="E-mail">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" placeholder="Senha">
+      <input type="password" class="form-control" [(ngModel)]="senha" placeholder="Senha">
     </div>
-      <button class="btn btn-block btn-outline-info">Login com E-mail</button>
+      <button (click)="loginEmail()" class="btn btn-block btn-outline-info">Login com E-mail</button>
 
 
 </div>
