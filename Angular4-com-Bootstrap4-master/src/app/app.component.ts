@@ -14,6 +14,8 @@ export class AppComponent {
   user: Observable<firebase.User>;
   email:string;
   senha:string;
+  nome:string;
+  urlImagem:string;
 
   constructor(public afAuth: AngularFireAuth){
   this.user= this.afAuth.authState;
@@ -23,6 +25,24 @@ loginFacebook(){
   this.afAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider());
 }
 
+vinculaFacebook(){
+    this.afAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider()).then((res:any)=>{
+      firebase.auth().currentUser.linkWithCredential(res.credential).then((user)=>{
+        console.log('OK');
+      },(erro)=>{
+        console.log('ERRO');
+      });
+    }).catch((erro:any)=>{
+      firebase.auth().currentUser.linkWithCredential(erro.credential).then((user)=>{
+        console.log('OK');
+      },(erro)=>{
+        console.log('ERRO');
+      });
+    });
+  }
+
+
+
 loginEmail(){
   firebase.auth().signInWithEmailAndPassword(this.email, this.senha).catch((erro:any)=>{
     console.log(erro);
@@ -30,9 +50,52 @@ loginEmail(){
   });
 }
 
+cadastroEmail(){
+  //console.log(this.email,this.senha);
+  firebase.auth().createUserWithEmailAndPassword(this.email,this.senha).then((res:any)=>{
+    console.log(res);
+    let usuario = firebase.auth().currentUser;
+    usuario.updateProfile({
+      displayName:this.nome,
+      photoURL:this.urlImagem
+    });
+
+  }).catch((erro:any)=>{
+    console.log(erro);
+  });
+}
+
+vinculaEmail(){
+  let credential = firebase.auth.EmailAuthProvider.credential(this.email,this.senha);
+  firebase.auth().currentUser.linkWithCredential(credential).then((user)=>{
+    console.log('OK');
+  },(erro)=>{
+    console.log(erro);
+    console.log('ERRO');
+  });
+}
+
+
 loginGithub(){
   this.afAuth.auth.signInWithPopup( new firebase.auth.GithubAuthProvider());
 }
+
+vinculaGithub(){
+  this.afAuth.auth.signInWithPopup( new firebase.auth.GithubAuthProvider()).then((res:any)=>{
+    firebase.auth().currentUser.linkWithCredential(res.credential).then((user)=>{
+      console.log('OK');
+    },(erro)=>{
+      console.log('ERRO');
+    });
+  }).catch((erro:any)=>{
+    firebase.auth().currentUser.linkWithCredential(erro.credential).then((user)=>{
+      console.log('OK');
+    },(erro)=>{
+      console.log('ERRO');
+    });
+  });
+}
+
 sair(){
   this.afAuth.auth.signOut();
 
